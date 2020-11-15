@@ -58,21 +58,29 @@
 
 }
 
-/// Encodes a SVG data URL so IE doesn't choke (via codepen.io/jakob-e/pen/YXXBrp).
-/// @param {string} $svg SVG data URL.
-/// @return {string} Encoded SVG data URL.
-@function svg-url($svg) {
+/* Icon (alt) */
 
-	$svg: str-replace($svg, '"', '\'');
-	$svg: str-replace($svg, '%', '%25');
-	$svg: str-replace($svg, '<', '%3C');
-	$svg: str-replace($svg, '>', '%3E');
-	$svg: str-replace($svg, '&', '%26');
-	$svg: str-replace($svg, '#', '%23');
-	$svg: str-replace($svg, '{', '%7B');
-	$svg: str-replace($svg, '}', '%7D');
-	$svg: str-replace($svg, ';', '%3B');
+@mixin icon-alt($content: false, $link: false) {
+	@include icon($content);
+	$size: _size(border-width) * 1.25;
 
-	@return url("data:image/svg+xml;charset=utf8,#{$svg}");
+	&:before {
+		color: _palette(bg);
+		text-shadow: $size 0px 0px _palette(border),
+					($size * -1) 0px 0px _palette(border),
+					0px $size 0px _palette(border),
+					0px ($size * -1) 0px _palette(border);
 
+	}
+
+	@if $link {
+		&:hover {
+			&:before {
+				text-shadow: $size 0px 0px _palette(highlight),
+							($size * -1) 0px 0px _palette(highlight),
+							0px $size 0px _palette(highlight),
+							0px ($size * -1) 0px _palette(highlight);
+			}
+		}
+	}
 }

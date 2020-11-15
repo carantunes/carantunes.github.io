@@ -30,4 +30,11 @@
 				font-family: 'Font Awesome 5 Brands';
 			}
 		}
+
+		&.regular {
+			&:before {
+				font-family: 'Font Awesome 5 Free';
+			}
+		}
+
 	}

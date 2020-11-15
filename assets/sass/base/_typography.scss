@@ -13,7 +13,6 @@
 		font-weight: _font(weight);
 		line-height: 2;
 		letter-spacing: _size(letter-spacing);
-		text-transform: uppercase;
 
 		@include breakpoint('<=xlarge') {
 			font-size: 11pt;
@@ -70,8 +69,8 @@
 
 	h1 {
 		font-size: 1.85em;
-		letter-spacing: (_size(letter-spacing) * 1.1);
 		margin: 0 0 (_size(element-margin) * 0.35) 0;
+		text-transform: uppercase;
 	}
 
 	h2 {

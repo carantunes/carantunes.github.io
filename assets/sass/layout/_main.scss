@@ -17,11 +17,11 @@
 		background: _palette(bg);
 		border-radius: _size(border-radius);
 		cursor: default;
-		max-width: 100%;
+		max-width: 60%;
+    	min-width: 27em;
 		opacity: 0.95;
 		position: relative;
 		text-align: center;
-		width: 27em;
 
 		.avatar {
 			position: relative;
@@ -29,6 +29,7 @@
 			margin-bottom: _size(element-margin);
 
 			img {
+				max-width: 200px;
 				display: block;
 				margin: 0 auto;
 				border-radius: 100%;
@@ -61,7 +62,7 @@
 		}
 
 		body.is-preload & {
-			@include vendor('transform', 'rotateX(15deg)');
+			@include vendor('transform', 'rotateX(-15deg)');
 			opacity: 0;
 		}
 	}
